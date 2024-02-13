@@ -1,7 +1,10 @@
 @import "./base.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap');
 
 body {
   background: linear-gradient(169deg, #101010, #3f3f3f);
+  padding: 30px;
 }
 
 #app {
@@ -11,157 +14,243 @@ body {
 }
 
 header {
+  width: 100%;
+  padding-right: 0 !important;
+  margin-bottom: 40px;
 
+  nav {
+    width: 100%;
 
-  img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+    ul {
+      width: 70%;
+      margin: auto;
+      padding: 0;
+      display: flex;
+      justify-content: space-evenly;
+
+      img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+
+      li {
+        list-style: none;
+
+        a {
+          position: relative;
+          display: block;
+          text-transform: uppercase;
+          margin: 20px 0;
+          padding: 8px 15px 5px 15px;
+          font-family: "Montserrat", sans-serif;
+          text-decoration: none;
+          color: #575757;
+          font-size: 18px;
+          font-weight: 500;
+          transition: .5s;
+          z-index: 1;
+
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 98%;
+            height: 88%;
+            margin-top: 5px;
+            margin-left: 1px;
+            border-top: 2px solid #202020;
+            border-bottom: 2px solid #202020;
+            transform: scaleY(2);
+            opacity: 0;
+            transition: .3s;
+          }
+
+          &:after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #202020;
+            transform: scale(0);
+            opacity: 0;
+            transition: .3s;
+            z-index: -1;
+            border-radius: 4px;
+          }
+
+          &:hover {
+            color: #e0e0e0;
+
+            &:before {
+              transform: scaleY(1);
+              opacity: 1;
+            }
+
+            &:after {
+              transform: scaleY(1);
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
   }
 }
-.wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.2rem 3rem;
+
+section {
+  h2 {
+    text-align: center;
+    color: #a5a5a5;
+    font-size: 1.2rem;
+    font-weight: 200;
+    font-family: "Roboto Slab", serif;
+    border-bottom: 1px solid #a5a5a5;
+    width: 60%;
+    margin: auto;
+  }
+
+  .products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7%;
+    flex-wrap: wrap;
+    padding: 2rem 1rem;
+
+    .product {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 175px;
+      height: 140px;
+      border-radius: 24px;
+      background: linear-gradient(-195deg, #202020, #101010);
+      box-shadow: 21px 21px 53px #070707,
+        -21px -21px 53px #191919;
+      padding: 0.9rem 0.5rem;
+      margin-bottom: 30px;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+        transition: 0.6s;
+      }
+
+      h3 {
+        color: #500101;
+        font-weight: 600;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      p {
+        color: #797979;
+        font-size: 0.8rem;
+        margin-bottom: -4px;
+
+      }
+      .rating {
+        margin-top: 10px;
+        margin-left: 75px;
+
+        .star {
+          width: 12px;
+          height: 12px;
+          color: #ff9e0c;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .cheapest-product {
+      position: relative;
+      border: 2px solid green;
+
+      &:before {
+        content: "Le moins cher";
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        font-size: 0.5rem;
+        color: green;
+        font-weight: 700;
+      }
+    }
+  }
 }
 
-header .wrapper ul {
-  display: flex;
-  gap: 1rem;
-  font-size: 1.2rem;
-}
 
-header .wrapper ul li {
-  list-style: none;
-}
 
-header .wrapper ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 1.1rem;
-}
 
-header .wrapper ul li a {
-  --b: 0.1em; /* the thickness of the line */
-  --c: #790606; /* the color */
 
-  color: #0000;
-  padding-block: var(--b);
-  background: linear-gradient(var(--c) 50%, #000 0) 0%
-      calc(100% - var(--_p, 0%)) / 100% 200%,
-    linear-gradient(var(--c) 0 0) 0% var(--_p, 0%) / var(--_p, 0%) var(--b)
-      no-repeat;
-  -webkit-background-clip: text, padding-box;
-  background-clip: text, padding-box;
-  transition: 0.3s var(--_s, 0s) linear,
-    background-size 0.3s calc(0.3s - var(--_s, 0s));
-}
-header .wrapper ul li a:hover {
-  --_p: 100%;
-  --_s: 0.3s;
-}
-
-section h2 {
-  text-align: center;
-  color: #790606;
-  padding: 1.5rem;
-  font-weight: 600;
-}
-
-.product h3 {
-  color: #000;
-}
-
-.products {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10%;
-  flex-wrap: wrap;
-  padding: 2rem;
-}
-
-.product {
+.register {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 45%;
-  border: 2px solid #790606;
   padding: 1rem;
-  margin-bottom: 20px;
-}
-
-section p {
-  color: #000;
-  font-size: 0.8rem;
-}
-
-.cheapest-product {
-  border: 2px solid green;
-}
-
-.register {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    width: 100%;
-    margin: auto;
+  width: 100%;
+  margin: auto;
 }
 
 .register h2 {
-    text-align: center;
-    color: #790606;
-    padding: 1rem;
-    font-size: 2rem;
-    font-weight: 600;
+  text-align: center;
+  color: #790606;
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 .register .element {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
-.register .element input, textarea, select {
-    width: 55%;
-    padding: 10px;
-    border: 1px solid #790606;
-    border-radius: 5px;
+.register .element input,
+textarea,
+select {
+  width: 55%;
+  padding: 10px;
+  border: 1px solid #790606;
+  border-radius: 5px;
 }
 
 input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
-input:focus, textarea:focus, select:focus:not(.select){
+input:focus,
+textarea:focus,
+select:focus:not(.select) {
   box-sizing: border-box;
   outline: 2px solid #790606;
   outline-offset: -3px;
   background: #7906067c;
-  border: 1px solid black; 
+  border: 1px solid black;
 }
 
 .register form {
-    width: 70%;
+  width: 70%;
 }
 
 button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #790606;
-    color: #fff;
-    cursor: pointer;
-    transition: 0.3s;
-    width: 100%;
+  padding: 10px 20px;
+  border: none;
+  background-color: #790606;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
 }
 
 button:hover {
-    background-color: #970202;
+  background-color: #970202;
 }
 
 .modal {
@@ -172,7 +261,7 @@ button:hover {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal p {
@@ -180,6 +269,7 @@ button:hover {
   font-size: 1.2rem;
   text-align: center;
 }
+
 .modal-content {
   background-color: #fefefe;
   margin: 15% auto;
@@ -187,30 +277,18 @@ button:hover {
   border: 1px solid #888;
   width: 80%;
 }
+
 .close {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
+
 .close:hover,
 .close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
 }
-.rating {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  margin-top: 10px;
-  height: 10px;
 
-}
-.star {
-  width: 15px;
-  height: 15px;
-  color: #ff9e0c;
-  cursor: pointer;
-}
