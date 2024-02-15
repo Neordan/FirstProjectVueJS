@@ -157,6 +157,7 @@ section {
         margin-bottom: -4px;
 
       }
+
       .rating {
         margin-top: 10px;
         margin-left: 75px;
@@ -187,74 +188,155 @@ section {
   }
 }
 
-
-
-
-
 .register {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
-  width: 100%;
+  width: 60%;
   margin: auto;
-}
-
-.register h2 {
-  text-align: center;
-  color: #790606;
-  padding: 1rem;
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-.register .element {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.register .element input,
-textarea,
-select {
-  width: 55%;
-  padding: 10px;
-  border: 1px solid #790606;
-  border-radius: 5px;
-}
-
-input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-}
-
-input:focus,
-textarea:focus,
-select:focus:not(.select) {
-  box-sizing: border-box;
-  outline: 2px solid #790606;
-  outline-offset: -3px;
-  background: #7906067c;
-  border: 1px solid black;
-}
-
-.register form {
-  width: 70%;
-}
-
-button {
-  padding: 10px 20px;
-  border: none;
-  background-color: #790606;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(100px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.253);
   color: #fff;
-  cursor: pointer;
-  transition: 0.3s;
-  width: 100%;
-}
+  border-radius: 10px;
+  padding: 30px 40px;
 
-button:hover {
-  background-color: #970202;
+  h2 {
+    text-align: center;
+    color: #a5a5a5;
+    font-size: 1.5rem;
+    font-weight: 200;
+    font-family: "Roboto Slab", serif;
+    border-bottom: 1px solid #a5a5a5;
+    width: 60%;
+    margin: auto;
+  }
+
+  form {
+    width: 90%;
+
+    .input-box {
+      display: flex;
+      justify-content: space-between;
+      height: 30px;
+      margin: 30px 0;
+
+      input {
+        width: 45%;
+        background: transparent;
+        border: none;
+        outline: none;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 40px;
+        font-size: 16px;
+        color: #fff;
+        padding: 20px 45px 20px 20px;
+
+        &::placeholder {
+          color: #858585;
+        }
+
+        &:focus {
+          outline: 2px solid #790606;
+          outline-offset: -3px;
+          background: #7906067c;
+          border: 1px solid black;
+        }
+      }
+      .select {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+        color:#9c9c9c;
+
+        #question {
+          width: 100%;
+          background: transparent;
+          border: none;
+          outline: none;
+          border: 2px solid rgba(255, 255, 255, 0.2);
+          border-radius: 40px;
+          font-size: 16px;
+          color: #fff;
+          cursor: pointer;
+          &::placeholder {
+            color: #858585;
+          }
+          &:focus {
+            outline: 2px solid #790606;
+            outline-offset: -3px;
+            background: #7906067c;
+            border: 1px solid black;
+          }
+        
+        }
+      }
+      .checkVue {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+        color:#9c9c9c;
+
+        input[type="checkbox"] {
+          width: 100%;
+          background: transparent;
+          border: none;
+          outline: none;
+          border: 2px solid rgba(255, 255, 255, 0.2);
+          border-radius: 40px;
+          font-size: 16px;
+          color: #fff;
+          cursor: pointer;
+        }
+      }
+    }
+    textarea {
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 40px;
+      font-size: 16px;
+      color: #fff;
+      padding: 20px 45px 20px 20px;
+      resize : none;
+
+      &::placeholder {
+        color: #858585;
+      }
+
+      &:focus {
+        outline: 2px solid #790606;
+        outline-offset: -3px;
+        background: #7906067c;
+        border: 1px solid black;
+      }
+    }
+    .btn {
+      width: 100%;
+      height: 45px;
+      border: none;
+      outline: none;
+      background: linear-gradient(-195deg, #202020, #101010);
+      border-radius: 40px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      color: #6b6b6b;
+      cursor:pointer;
+      font-size: 16px; 
+      transition: 0.8s; 
+
+      &:hover {
+        background: linear-gradient(240deg, #202020, #101010);;
+        color: #fff;
+      }
+  }
 }
 
 .modal {
@@ -295,4 +377,4 @@ button:hover {
   text-decoration: none;
   cursor: pointer;
 }
-
+}

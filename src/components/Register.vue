@@ -2,47 +2,37 @@
   <div class="register">
     <h2>Formulaire</h2>
     <form @submit.prevent="handleSubmit">
-      <div class="element">
-        <label for="firstname">Prénom:</label>
-        <input type="text" id="firstname" v-model="firstname" required>
+      <div class="input-box">
+        <input type="text" id="firstname" placeholder="Firstname" v-model="firstname" required>
+        <input type="text" id="lastname" placeholder="Lastname" v-model="lastname" required>
       </div>
-      <div class="element">
-        <label for="lastname">Nom:</label>
-        <input type="text" id="lastname" v-model="lastname" required>
-      </div>
-      <div class="element">
-        <label for="birthday">Date de naissance:</label>
+      <div class="input-box">
         <input type="date" id="dateNaissance" v-model="birthday" required>
+        <input type="text" id="pseudo" placeholder="Peudo" v-model="pseudo" required>
       </div>
-      <div class="element">
-        <label for="pseudo">Pseudo:</label>
-        <input type="text" id="pseudo" v-model="pseudo" required>
-      </div>
-      <div class="element">
-        <label for="description">Description:</label>
-        <textarea id="description" v-model="description" required></textarea>
-      </div>
-      <div class="element">
+        <textarea id="description" placeholder="Biographie" v-model="description" required></textarea>
+      <div class="input-box">
+        <div class="select">
         <label for="question">Aimez-vous Laravel ?</label>
         <select id="question" v-model="question" required>
-          <option value="">Choisir...</option>
+          <option value="">&lt->></option>
           <option value="Oui">Oui</option>
           <option value="Non">Non</option>
         </select>
       </div>
-      <div class="element select">
+      <div class="checkVue">
         <label for="likeVueJs">Aimez-vous Vue.js?</label>
         <input type="checkbox" id="likeVueJs" v-model="likeVueJs">
       </div>
-      <div class="element">
-        <label for="password">Mot de passe:</label>
-        <input type="password" id="password" v-model="password" required>
+    </div>
+      <div class="input-box">
+        <input type="password" id="password"  placeholder="Password" v-model="password" required>
+        <input type="password" id="confirmPassword" placeholder="Comfirm Password" v-model="confirmPassword" required>  
       </div>
-      <div class="element">
-        <label for="confirmPassword">Confirmation mot de passe:</label>
-        <input type="password" id="confirmPassword" v-model="confirmPassword" required>
-      </div>
-      <button type="submit">Submit</button>
+
+            
+      <button class="btn" type="submit">Submit</button>
+          
     </form>
   <!-- Modal -->
   <div v-if="showModal" class="modal">
