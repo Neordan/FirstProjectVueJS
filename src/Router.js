@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from './components/Home.vue';
+import Home from './views/Home.vue';
 import Products from './components/Products.vue';
-import ProductDetails from './components/ProductDetails.vue';
-import Login from './components/Login.vue';
-import Contact from './components/Contact.vue';
-import ProductDetailsSimilar from './components/ProductDetailsSimilar.vue';
+import ProductDetails from './views/ProductDetails.vue';
+import Login from './views/Login.vue';
+import Contact from './views/Contact.vue';
+import ProductDetailsSimilar from './views/ProductDetailsSimilar.vue';
 
 
 const routes = [
@@ -21,8 +21,7 @@ const routes = [
   {
     path: '/product/:id',
     name: 'productDetails',
-    component: ProductDetails,
-    props: true
+    component: ProductDetails
   },
 {
   path: '/similar-product/:id',
