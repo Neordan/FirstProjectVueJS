@@ -4,6 +4,7 @@
 body {
   background: linear-gradient(169deg, #101010, #3f3f3f);
   padding: 30px;
+  box-sizing: border-box;
 }
 
 #app {
@@ -112,42 +113,61 @@ section .products a {
   text-decoration: none;
   color: #616161;
 }
-section .products a div {
+section .products a .product {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 175px;
-  height: 140px;
   border-radius: 24px;
   background: linear-gradient(-195deg, #202020, #101010);
   box-shadow: 21px 21px 53px #070707, -21px -21px 53px #191919;
-  padding: 0.9rem 0.5rem;
+  padding: 0.9rem 0.8rem;
   margin-bottom: 30px;
   cursor: pointer;
   transition: transform 0.6s;
 }
-section .products a div:hover {
+section .products a .product:hover {
   transform: scale(1.05);
 }
-section .products a div:not(:hover) {
+section .products a .product:not(:hover) {
   transform: scale(1);
 }
-section .products a div h3 {
+section .products a .product h3 {
   color: #500101;
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
 }
-section .products a div p {
+section .products a .product p {
   color: #797979;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   margin-bottom: -4px;
 }
-section .products a div .rating {
+section .products a .product .desc {
+  white-space: wrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 12px;
+  margin-bottom: 8px;
+  text-align: justify;
+  font-style: italic;
+}
+section .products a .product .price {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: right;
+}
+section .products a .product .quantity {
+  display: none;
+}
+section .products a .product .rating {
   margin-top: 10px;
   display: flex;
 }
-section .products a div .rating .star {
+section .products a .product .rating .star {
   width: 12px;
   height: 12px;
   color: #ff9e0c;
@@ -358,7 +378,6 @@ section .products a .cheapest-product:before {
   font-weight: 200;
   font-family: "Roboto Slab", serif;
   border-bottom: 1px solid #a5a5a5;
-  width: 60%;
   margin: auto;
   line-height: 40px;
   margin-bottom: 30px;
@@ -371,13 +390,14 @@ section .products a .cheapest-product:before {
   align-items: center;
 }
 .similar-group .similar-link a {
-  color: #790606;
+  text-decoration: none;
+}
+.similar-group .similar-link a .product {
   text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 175px;
-  height: 70px;
+  width: 195px;
   border-radius: 24px;
   background: linear-gradient(-195deg, #202020, #101010);
   box-shadow: 21px 21px 45px #070707, -21px -21px 45px #191919;
@@ -386,18 +406,13 @@ section .products a .cheapest-product:before {
   cursor: pointer;
   transition: all 1s;
 }
-.similar-group .similar-link a:hover {
-  transform: scale(1.05);
-  font-size: 1.2rem;
+.similar-group .similar-link a .product:hover {
+  background: linear-gradient(195deg, #202020, #101010);
 }
-.similar-group .similar-link a:not(:hover) {
-  transform: scale(1);
-}
-
-.product-info h1 {
+.similar-group .similar-link a .product h3 {
   text-align: center;
-  color: #630000;
-  font-size: 1.5rem;
+  color: #7a7a7a;
+  font-size: 1.2rem;
   font-weight: 300;
   font-family: "Roboto Slab", serif;
   width: 60%;
@@ -405,7 +420,77 @@ section .products a .cheapest-product:before {
   line-height: 40px;
   margin-bottom: 18px;
 }
-.product-info .desc, .product-info .price, .product-info .quantity {
+.similar-group .similar-link a .product .desc {
+  white-space: wrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 12px;
+  margin: auto auto 8px auto;
+  text-align: justify;
+  font-style: italic;
+  color: #6b6b6b;
+  width: 80%;
+}
+.similar-group .similar-link a .product .price {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6b6b6b;
+}
+.similar-group .similar-link a .product .quantity {
+  display: none;
+}
+.similar-group .similar-link a .product .rating {
+  margin-top: 0;
+}
+.similar-group .similar-link a .product .rating .star {
+  height: 10px;
+  width: 10px;
+}
+
+.product-info h3 {
+  text-align: center;
+  color: #630000;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Roboto Slab", serif;
+  width: 60%;
+  margin: auto;
+  line-height: 40px;
+  margin-bottom: 18px;
+}
+.product-info h4 {
+  text-align: center;
+  color: #a5a5a5;
+  font-size: 1.2rem;
+  font-weight: 200;
+  font-family: "Roboto Slab", serif;
+  width: 60%;
+  margin: auto;
+  line-height: 40px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #a5a5a5;
+}
+.product-info .product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  padding: 0.9rem 0.5rem;
+  margin-bottom: 30px;
+  width: 60%;
+  text-align: justify;
+  margin: auto;
+}
+.product-info .product div {
+  width: 100%;
+}
+.product-info .product .desc,
+.product-info .product .price,
+.product-info .product .quantity {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -413,28 +498,46 @@ section .products a .cheapest-product:before {
   font-family: "Montserrat", sans-serif;
   margin-bottom: 6px;
 }
+.product-info .product .price {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.product-info .product .rating {
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+}
+.product-info .product .rating .star {
+  width: 20px;
+  height: 20px;
+  color: #ff9e0c;
+}
 
-.home, .contact {
+.home,
+.contact {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 70px 0;
 }
-.home h1, .contact h1 {
+.home h1,
+.contact h1 {
   color: #fff;
   font-size: 2.5rem;
   font-weight: 300;
   font-family: "Roboto Slab", serif;
   margin-bottom: 10px;
 }
-.home p, .contact p {
+.home p,
+.contact p {
   color: #a5a5a5;
   font-size: 1.2rem;
   font-weight: 200;
   font-family: "Roboto Slab", serif;
   margin-bottom: 30px;
 }
-.home a, .contact a {
+.home a,
+.contact a {
   color: #fff;
   font-size: 1.2rem;
   font-weight: 200;

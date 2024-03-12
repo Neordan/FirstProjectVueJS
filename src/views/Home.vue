@@ -5,9 +5,3 @@
     <p>Vous êtes sur la page d'accueil</p>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'Home'
-}
-</script>

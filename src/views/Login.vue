@@ -56,7 +56,7 @@
         birthday: '',
         pseudo: '',
         description: '',
-        question: '', // Corrected property name
+        question: '', 
         likeVueJs: false,
         password: '',
         confirmPassword: '',

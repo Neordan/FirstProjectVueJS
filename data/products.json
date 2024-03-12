@@ -1,13 +1,13 @@
 [
-    { "id": 1, "name": "Produit A", "unit_price": 10, "quantity": 20, "description": "Description du produit A", "rating": 3.5 },
-    { "id": 2, "name": "Produit B", "unit_price": 15, "quantity": 15, "description": "Description du produit B", "rating": 3 },
-    { "id": 3, "name": "Produit C", "unit_price": 8, "quantity": 30, "description": "Description du produit C", "rating": 5 },
-    { "id": 4, "name": "Produit D", "unit_price": 12, "quantity": 25, "description": "Description du produit D", "rating": 5 },
-    { "id": 5, "name": "Produit E", "unit_price": 7, "quantity": 10, "description": "Description du produit E", "rating": 3.5 },
-    { "id": 6, "name": "Produit F", "unit_price": 7, "quantity": 20, "description": "Description du produit F", "rating": 0.5 },
-    { "id": 7, "name": "Produit G", "unit_price": 6, "quantity": 12, "description": "Description du produit G", "rating": 4.5 },
-    { "id": 8, "name": "Produit H", "unit_price": 6, "quantity": 15, "description": "Description du produit H", "rating": 2.5 },
-    { "id": 9, "name": "Produit I", "unit_price": 20, "quantity": 22, "description": "Description du produit I", "rating": 3.5 },
-    { "id": 10, "name": "Produit J", "unit_price": 7, "quantity": 25, "description": "Description du produit J" }
+    { "id": 1, "name": "Produit A", "unit_price": 10, "quantity": 20, "description": "Lorem ipsum dolor sit amet, consec tetur adipiscing elit. Donec pharetra odio et risus fringilla mattis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.", "rating": 3.5 },
+    { "id": 2, "name": "Produit B", "unit_price": 15, "quantity": 15, "description": "Lorem ipsum dolor sit amet, consec tetur adipiscing elit. Donec pharetra odio et risus fringilla mattis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.", "rating": 3 },
+    { "id": 3, "name": "Produit C", "unit_price": 8, "quantity": 30, "description": "Lorem ipsum dolor sit amet, consec tetur adipiscing elit. Donec pharetra odio et risus fringilla mattis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.", "rating": 5 },
+    { "id": 4, "name": "Produit D", "unit_price": 12, "quantity": 25, "description": "Lorem ipsum dolor sit amet, consec tetur adipiscing elit. Donec pharetra odio et risus fringilla mattis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.", "rating": 5 },
+    { "id": 5, "name": "Produit E", "unit_price": 7, "quantity": 10, "description": "Lorem ipsum dolor sit amet, consec tetur adipiscing elit. Donec pharetra odio et risus fringilla mattis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.", "rating": 3.5 },
+    { "id": 6, "name": "Produit F", "unit_price": 7, "quantity": 20, "description": "Lorem ipsum dolor sit amet, consec tetur adipiscing elit. Donec pharetra odio et risus fringilla mattis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.", "rating": 0.5 },
+    { "id": 7, "name": "Produit G", "unit_price": 6, "quantity": 12, "description": "Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Donec pharetra odio et risus fringilla mattis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.", "rating": 4.5 },
+    { "id": 8, "name": "Produit H", "unit_price": 6, "quantity": 15, "description": "Lorem ipsum dolor sit amet, consec tetur adipiscing elit. Donec pharetra odio et risus fringilla mattis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.", "rating": 2.5 },
+    { "id": 9, "name": "Produit I", "unit_price": 20, "quantity": 22, "description": "Lorem ipsum dolor sit amet, consec tetur adipiscing elit. Donec pharetra odio et risus fringilla mattis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.", "rating": 3.5 },
+    { "id": 10, "name": "Produit J", "unit_price": 7, "quantity": 25, "description": "Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Donec pharetra odio et risus fringilla mattis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." }
   ]
   
