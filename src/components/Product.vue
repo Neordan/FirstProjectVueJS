@@ -1,35 +1,34 @@
 <template>
-  <div :class="[{ 'cheapest-product': product.unit_price === cheapestPrice }, productClass]">
+  <div :class="[productClass, { 'cheapest-product': product.unit_price === cheapestPrice }]">
     <div>
       <h3>{{ product.name }}</h3>
-      <p v-html="product.description"></p>
-      <p>Prix unitaire: {{ product.unit_price }} €</p>
-      <p>Quantité disponible: {{ product.quantity }}</p>
+      <p class="desc" v-html="product.description"></p>
+      <p class="price">Prix: {{ product.unit_price }} €</p>
+      <p class="quantity">Quantité disponible: {{ product.quantity }}</p>
     </div>
-      <Rating :value="product.rating" />
-    </div>
-  </template>
+    <Rating :value="product.rating" />
+  </div>
+</template>
   
-  <script>
-  import Rating from './Rating.vue';
-  
-  export default {
-    props: {
-      product: {
-        type: Object,
-        required: true
-      },
-      cheapestPrice: {
-        type: Number,
-        required: true
-      },
-      productClass: {
-        type: String
-      }
+<script>
+import Rating from './Rating.vue';
+
+export default {
+  components: {
+    Rating
+  },
+  props: {
+    product: {
+      type: Object,
+      required: true
     },
-    components: {
-      Rating
-    }
-  };
-  </script>
-  
+    cheapestPrice: {
+      type: Number,
+      required: true
+    },
+    productClass: {
+      type: String
+    },
+  }
+};
+</script>
