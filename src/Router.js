@@ -38,6 +38,10 @@ const routes = [
     path: '/contact',
     name: 'contact',
     component: Contact
+  },
+  {
+    path: '/:catchAll(.*)',
+    redirect: { name: 'home' }
   }
 ];
 
