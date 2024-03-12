@@ -1,14 +1,10 @@
 <script setup>
-import ProductVue from './components/Products.vue';
 import Header from './components/Header.vue';
-import Register from './components/Register.vue';
-
 </script>
 
 <template>
   <Header />
-  <ProductVue />
-  <Register />
+  <router-view/>
 </template>
 
 <style scoped>
