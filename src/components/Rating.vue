@@ -1,5 +1,5 @@
 <template>
-    <div class="rating">
+    <section class="rating">
       <span v-for="n in 5" :key="n" class="stars">
         <template v-if="n <= value">
           <box-icon name='star' type='solid' color="#ff9e0c" class="star"></box-icon>
@@ -11,7 +11,7 @@
           <box-icon name='star' color="#ff9e0c" class="star"></box-icon>
         </template>
       </span>
-    </div>
+    </section>
   </template>
   
   <script>
