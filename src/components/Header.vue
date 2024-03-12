@@ -1,14 +1,15 @@
-<!-- fais moi un composent header -->
+
+<!-- header -->
 
 <template>
   <header>
       <nav>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
+          <li><router-link :to="{ name: 'home' }">Home</router-link></li>
+          <li><router-link :to="{ name: 'products' }">Products</router-link></li>
           <img class="logo" src="../assets/img/logo2.png" alt="Vue Mastery" />
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><router-link :to="{ name: 'login' }">Connexion</router-link></li>
+          <li><router-link to="/contact">Contact</router-link></li>
         </ul>
       </nav>
   </header>
