@@ -108,7 +108,11 @@ section .products {
   flex-wrap: wrap;
   padding: 2rem 1rem;
 }
-section .products .product {
+section .products a {
+  text-decoration: none;
+  color: #616161;
+}
+section .products a div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -123,37 +127,38 @@ section .products .product {
   cursor: pointer;
   transition: transform 0.6s;
 }
-section .products .product:hover {
+section .products a div:hover {
   transform: scale(1.05);
 }
-section .products .product:not(:hover) {
+section .products a div:not(:hover) {
   transform: scale(1);
 }
-section .products .product h3 {
+section .products a div h3 {
   color: #500101;
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
 }
-section .products .product p {
+section .products a div p {
   color: #797979;
   font-size: 0.8rem;
   margin-bottom: -4px;
 }
-section .products .product .rating {
+section .products a div .rating {
   margin-top: 10px;
   margin-left: 75px;
+  height: 10px;
 }
-section .products .product .rating .star {
+section .products a div .rating .star {
   width: 12px;
   height: 12px;
   color: #ff9e0c;
   cursor: pointer;
 }
-section .products .cheapest-product {
+section .products a .cheapest-product {
   position: relative;
   border: 2px solid green;
 }
-section .products .cheapest-product:before {
+section .products a .cheapest-product:before {
   content: "Le moins cher";
   position: absolute;
   top: 5px;
