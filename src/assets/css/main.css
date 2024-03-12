@@ -3,14 +3,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap");
 body {
   background: linear-gradient(169deg, #101010, #3f3f3f);
-  padding: 30px;
+  padding-top: 30px;
   box-sizing: border-box;
+  display: flex;
 }
 
 #app {
-  max-width: 1280px;
+  width: 80%;
   margin: 0 auto;
   font-weight: normal;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -470,7 +473,7 @@ section .products a .cheapest-product:before {
   width: 60%;
   margin: auto;
   line-height: 40px;
-  margin-bottom: 30px;
+  margin: 30px auto;
   border-bottom: 1px solid #a5a5a5;
 }
 .product-info .product {
@@ -517,8 +520,10 @@ section .products a .cheapest-product:before {
 .contact {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 70px 0;
+  flex: 1;
 }
 .home h1,
 .contact h1 {
@@ -543,4 +548,15 @@ section .products a .cheapest-product:before {
   font-weight: 200;
   font-family: "Roboto Slab", serif;
   margin-bottom: 30px;
+}
+
+footer {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size: 0.7rem;
+  font-style: italic;
+  color: #464646;
+  margin: 25px 0 10px 0;
+  border-top: 1px solid #3f3f3f;
+  padding-top: 10px;
 }/*# sourceMappingURL=main.css.map */

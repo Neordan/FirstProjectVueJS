@@ -15,7 +15,7 @@
           <div class="select">
             <label for="question">Aimez-vous Laravel ?</label>
             <select id="question" v-model="question" required>
-              <option value="">&lt;-></option>
+              <option value=""></option>
               <option value="Oui">Oui</option>
               <option value="Non">Non</option>
             </select>
