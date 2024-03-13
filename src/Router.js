@@ -4,7 +4,7 @@ import Products from './components/Products.vue';
 import ProductDetails from './views/ProductDetails.vue';
 import Login from './views/Login.vue';
 import Contact from './views/Contact.vue';
-import ProductDetailsSimilar from './views/ProductDetailsSimilar.vue';
+import Cart from './views/Cart.vue';
 
 
 const routes = [
@@ -23,15 +23,15 @@ const routes = [
     name: 'productDetails',
     component: ProductDetails
   },
-{
-  path: '/similar-product/:id',
-  name: 'similarProductDetails',
-  component: ProductDetailsSimilar
-},
   {
     path: '/login',
     name: 'login',
     component: Login
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: Cart
   },
   {
     path: '/contact',
