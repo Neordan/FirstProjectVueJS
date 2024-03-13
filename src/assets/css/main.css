@@ -1,6 +1,6 @@
 @import "./base.css";
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 body {
   background: linear-gradient(169deg, #101010, #3f3f3f);
   padding-top: 30px;
@@ -9,7 +9,7 @@ body {
 }
 
 #app {
-  width: 80%;
+  width: 96%;
   margin: 0 auto;
   font-weight: normal;
   display: flex;
@@ -94,6 +94,100 @@ header nav ul li a:hover:after {
   opacity: 1;
 }
 
+.home .presentation {
+  position: relative;
+  background: url(../img/presentation.png) center/cover;
+  border-radius: 5px 5px 0 0;
+  height: 300px;
+}
+.home .presentation::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(244, 244, 244, 0.349);
+  border-radius: 5px 5px 0 0;
+}
+.home .presentation .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 90px 130px;
+  width: 100%;
+}
+.home .presentation .title h1 {
+  color: #070709;
+  font-size: 3.5rem;
+  font-family: "Oswald";
+  font-weight: 300;
+  margin: 0;
+}
+.home .presentation .title h1 span {
+  font-weight: 600;
+}
+.home .presentation .title h2 {
+  font-size: 1.8rem;
+  font-family: "Playfair display";
+  font-weight: 600;
+  margin: 0;
+  color: #651616;
+  width: 100%;
+  text-align: end;
+}
+.home .new-collection {
+  padding: 20px;
+  display: flex;
+  border-left: 2px solid #555555;
+  border-right: 2px solid #555555;
+}
+.home .new-collection img {
+  width: 50%;
+  background-position: center;
+  background-size: contain;
+}
+.home .new-collection .collection-description {
+  background-color: #070709;
+  width: 50%;
+  border-left: 5px solid #262626;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 200px 0 15px 0;
+}
+.home .new-collection .collection-description h3 {
+  color: #fff;
+  font-size: 2rem;
+  font-family: "Oswald";
+  font-weight: 500;
+}
+.home .new-collection .collection-description p {
+  color: #a5a5a5;
+  font-size: 1.4rem;
+  font-family: "Roboto Slab";
+  font-weight: 200;
+  text-align: center;
+}
+.home .new-collection .collection-description .collection-btn {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.home .new-collection .collection-description .collection-btn button {
+  background: #651616;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 1.1rem;
+  font-family: "Raleway";
+  font-weight: 200;
+  border-radius: 0;
+  margin-right: 15px;
+}
+
 section h2 {
   text-align: center;
   color: #a5a5a5;
@@ -175,6 +269,9 @@ section .products a .product .rating .star {
   height: 12px;
   color: #ff9e0c;
   cursor: pointer;
+}
+section .products a .product button {
+  display: none;
 }
 section .products a .cheapest-product {
   position: relative;
@@ -412,6 +509,9 @@ section .products a .cheapest-product:before {
 .similar-group .similar-link a .product:hover {
   background: linear-gradient(195deg, #202020, #101010);
 }
+.similar-group .similar-link a .product button {
+  display: none;
+}
 .similar-group .similar-link a .product h3 {
   text-align: center;
   color: #7a7a7a;
@@ -453,6 +553,9 @@ section .products a .cheapest-product:before {
   width: 10px;
 }
 
+.product-info {
+  flex: 1;
+}
 .product-info h3 {
   text-align: center;
   color: #630000;
@@ -477,6 +580,7 @@ section .products a .cheapest-product:before {
   border-bottom: 1px solid #a5a5a5;
 }
 .product-info .product {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -488,12 +592,30 @@ section .products a .cheapest-product:before {
   text-align: justify;
   margin: auto;
 }
+.product-info .product button {
+  width: 100%;
+  height: 45px;
+  border: none;
+  outline: none;
+  background: linear-gradient(-195deg, #202020, #101010);
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #6b6b6b;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.8s;
+  margin-top: 20px;
+}
+.product-info .product button:hover {
+  background: linear-gradient(240deg, #202020, #101010);
+  color: #fff;
+}
 .product-info .product div {
   width: 100%;
 }
-.product-info .product .desc,
-.product-info .product .price,
-.product-info .product .quantity {
+.product-info .product div .desc,
+.product-info .product div .price,
+.product-info .product div .quantity {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -501,22 +623,21 @@ section .products a .cheapest-product:before {
   font-family: "Montserrat", sans-serif;
   margin-bottom: 6px;
 }
-.product-info .product .price {
+.product-info .product div .price {
   font-weight: 600;
   font-size: 1.1rem;
 }
-.product-info .product .rating {
+.product-info .rating {
   margin-top: 10px;
   display: flex;
   gap: 5px;
 }
-.product-info .product .rating .star {
+.product-info .rating .star {
   width: 20px;
   height: 20px;
   color: #ff9e0c;
 }
 
-.home,
 .contact {
   display: flex;
   flex-direction: column;
@@ -525,7 +646,6 @@ section .products a .cheapest-product:before {
   padding: 70px 0;
   flex: 1;
 }
-.home h1,
 .contact h1 {
   color: #fff;
   font-size: 2.5rem;
@@ -533,7 +653,6 @@ section .products a .cheapest-product:before {
   font-family: "Roboto Slab", serif;
   margin-bottom: 10px;
 }
-.home p,
 .contact p {
   color: #a5a5a5;
   font-size: 1.2rem;
@@ -541,13 +660,56 @@ section .products a .cheapest-product:before {
   font-family: "Roboto Slab", serif;
   margin-bottom: 30px;
 }
-.home a,
 .contact a {
   color: #fff;
   font-size: 1.2rem;
   font-weight: 200;
   font-family: "Roboto Slab", serif;
   margin-bottom: 30px;
+}
+
+.cart {
+  flex: 1;
+}
+.cart .cart-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 25px;
+}
+.cart .cart-lines .line {
+  display: flex;
+  justify-content: space-between;
+}
+.cart .cart-lines .quantity input {
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  color: #fff;
+}
+.cart .cart-lines .quantity button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background: linear-gradient(-195deg, #202020, #101010);
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #6b6b6b;
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.8s;
+}
+.cart .cart-lines .quantity button:hover {
+  background: linear-gradient(240deg, #202020, #101010);
+  color: #fff;
+}
+.cart .cart-lines box-icon {
+  cursor: pointer;
 }
 
 footer {
@@ -559,4 +721,22 @@ footer {
   margin: 25px 0 10px 0;
   border-top: 1px solid #3f3f3f;
   padding-top: 10px;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.confirmation {
+  position: absolute;
+  top: 300px;
+  left: 163px;
+  font-size: 0.7rem;
+  color: #686868;
 }/*# sourceMappingURL=main.css.map */
