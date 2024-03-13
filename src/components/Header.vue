@@ -9,7 +9,8 @@
           <li><router-link :to="{ name: 'products' }">Products</router-link></li>
           <img class="logo" src="../assets/img/logo2.png" alt="Vue Mastery" />
           <li><router-link :to="{ name: 'login' }">Connexion</router-link></li>
-          <li><router-link :to="{ name: 'contact' }">Contact</router-link></li>
+          <li><router-link :to="{ name: 'cart' }"><box-icon name='basket' color='#575757' ></box-icon></router-link></li>
+          <!-- <li><router-link :to="{ name: 'contact' }">Contact</router-link></li> -->
         </ul>
       </nav>
   </header>
