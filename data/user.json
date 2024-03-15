@@ -1,0 +1,5 @@
+[
+    { "id": 1, "firstname": "Paul", "pseudo": 10, "email": "paul@gmail.com", "password": "456", "image": "https://via.placeholder.com/150"},
+    { "id": 2, "firstname": "Emma", "pseudo": 15, "email": "emma@gmail.com", "password": "123" }
+  ]
+  
