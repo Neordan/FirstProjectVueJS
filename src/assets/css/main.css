@@ -257,7 +257,8 @@ header nav .cart-badge {
   font-size: 0.7rem;
   margin-bottom: -4px;
 }
-.fav-products .products a .product .desc, .fav-products .products a .product .quantity {
+.fav-products .products a .product .desc,
+.fav-products .products a .product .quantity {
   display: none;
 }
 .fav-products .products a .product .price {
@@ -321,14 +322,16 @@ header nav .cart-badge {
 .register form {
   width: 90%;
 }
-.register form .input-box {
+.register form .input-box1 {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  height: 30px;
+  align-items: center;
+  gap: 10px;
   margin: 30px 0;
 }
-.register form .input-box input {
-  width: 45%;
+.register form .input-box1 input {
+  width: 95%;
   background: transparent;
   border: none;
   outline: none;
@@ -338,19 +341,19 @@ header nav .cart-badge {
   color: #fff;
   padding: 20px 45px 20px 20px;
 }
-.register form .input-box input::-moz-placeholder {
+.register form .input-box1 input::-moz-placeholder {
   color: #858585;
 }
-.register form .input-box input::placeholder {
+.register form .input-box1 input::placeholder {
   color: #858585;
 }
-.register form .input-box input:focus {
+.register form .input-box1 input:focus {
   outline: 2px solid #790606;
   outline-offset: -3px;
   background: rgba(121, 6, 6, 0.4862745098);
   border: 1px solid black;
 }
-.register form .input-box .select {
+.register form .input-box1 .select {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -358,7 +361,7 @@ header nav .cart-badge {
   gap: 3px;
   color: #9c9c9c;
 }
-.register form .input-box .select #question {
+.register form .input-box1 .select #question {
   width: 100%;
   background: transparent;
   border: none;
@@ -369,19 +372,19 @@ header nav .cart-badge {
   color: #fff;
   cursor: pointer;
 }
-.register form .input-box .select #question::-moz-placeholder {
+.register form .input-box1 .select #question::-moz-placeholder {
   color: #858585;
 }
-.register form .input-box .select #question::placeholder {
+.register form .input-box1 .select #question::placeholder {
   color: #858585;
 }
-.register form .input-box .select #question:focus {
+.register form .input-box1 .select #question:focus {
   outline: 2px solid #790606;
   outline-offset: -3px;
   background: rgba(121, 6, 6, 0.4862745098);
   border: 1px solid black;
 }
-.register form .input-box .checkVue {
+.register form .input-box1 .checkVue {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -389,7 +392,7 @@ header nav .cart-badge {
   gap: 3px;
   color: #9c9c9c;
 }
-.register form .input-box .checkVue input[type=checkbox] {
+.register form .input-box1 .checkVue input[type=checkbox] {
   width: 100%;
   background: transparent;
   border: none;
@@ -826,4 +829,59 @@ footer {
   left: 163px;
   font-size: 0.7rem;
   color: #686868;
+}
+
+.home .fav-products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.home .fav-products a {
+  text-decoration: none;
+}
+.home .fav-products a .product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 175px;
+}
+.home .fav-products a .product .card {
+  background: #070709;
+  width: 100%;
+}
+.home .fav-products a .product .card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+}
+.home .fav-products a .product .card h3 {
+  color: #500101;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+.home .fav-products a .product .card p {
+  color: #797979;
+  font-size: 0.7rem;
+  margin-bottom: -4px;
+}
+.home .fav-products a .product .card .desc,
+.home .fav-products a .product .card .quantity {
+  display: none;
+}
+.home .fav-products a .product .card .price {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: right;
+}
+.home .fav-products a .product .card .rating {
+  margin-top: 10px;
+  display: flex;
+}
+.home .fav-products a .product .card .rating .star {
+  width: 12px;
+  height: 12px;
+  color: #ff9e0c;
 }/*# sourceMappingURL=main.css.map */
