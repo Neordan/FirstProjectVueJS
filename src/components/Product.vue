@@ -1,15 +1,18 @@
 <template>
-  <div :class="[productClass, { 'cheapest-product': product.unit_price === cheapestPrice }]">
+  <div :class="[productClass]">
+    <section class="card">
     <div>
       <transition name="fade">
         <div v-if="showConfirmation" class="confirmation">Produit ajouté au panier!</div>
       </transition>
+      <img :src="product.image" alt="Product Image">
       <h3>{{ product.name }}</h3>
       <p class="desc" v-html="product.description"></p>
       <p class="price">Prix: {{ product.unit_price }} €</p>
       <p class="quantity">Quantité disponible: {{ product.quantity }}</p>
     </div>
     <Rating :value="product.rating" />
+  </section>
     <button @click="addToCart(product)">Ajouter au panier</button>
   </div>
 </template>
