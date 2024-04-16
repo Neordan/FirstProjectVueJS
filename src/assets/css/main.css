@@ -9,8 +9,6 @@ body {
 }
 
 #app {
-  width: 96%;
-  margin: 0 auto;
   font-weight: normal;
   display: flex;
   flex-direction: column;
@@ -204,93 +202,181 @@ header nav .cart-badge {
   border-radius: 0;
   margin-right: 15px;
 }
-
-.fav-products h2 {
-  text-align: center;
-  color: #a5a5a5;
-  font-size: 1.2rem;
-  font-weight: 200;
-  font-family: "Roboto Slab", serif;
-  border-bottom: 1px solid #a5a5a5;
-  width: 60%;
-  margin: auto;
+.home .fav {
+  padding: 25px;
 }
-.fav-products .products {
+.home .fav h2 {
+  color: #030303;
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-family: "OSWALD", serif;
+}
+.home .fav .fav-products {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 7%;
-  flex-wrap: wrap;
-  padding: 2rem 1rem;
+  justify-content: space-between;
 }
-.fav-products .products a {
+.home .fav .fav-products a {
   text-decoration: none;
-  color: #616161;
 }
-.fav-products .products a .product {
+.home .fav .fav-products a .product {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  width: 175px;
-  border-radius: 24px;
-  background: linear-gradient(-195deg, #202020, #101010);
-  box-shadow: 21px 21px 53px #070707, -21px -21px 53px #191919;
-  padding: 0.9rem 0.8rem;
-  margin-bottom: 30px;
+  align-items: end;
+  width: 180px;
   cursor: pointer;
-  transition: transform 0.6s;
 }
-.fav-products .products a .product:hover {
-  transform: scale(1.05);
+.home .fav .fav-products a .product .card {
+  border: 3px solid #580404;
+  margin-bottom: 5px;
 }
-.fav-products .products a .product:not(:hover) {
-  transform: scale(1);
+.home .fav .fav-products a .product .card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
 }
-.fav-products .products a .product h3 {
-  color: #500101;
-  font-weight: 600;
-  font-family: "Montserrat", sans-serif;
-}
-.fav-products .products a .product p {
-  color: #797979;
-  font-size: 0.7rem;
-  margin-bottom: -4px;
-}
-.fav-products .products a .product .desc,
-.fav-products .products a .product .quantity {
+.home .fav .fav-products a .product .card .title-bis, .home .fav .fav-products a .product .card .price-bis {
   display: none;
 }
-.fav-products .products a .product .price {
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-align: right;
+.home .fav .fav-products a .product .card h3 {
+  color: #fff;
+  font-weight: 300;
+  font-family: "Playfair Display";
+  text-align: center;
+  margin-bottom: -3px;
 }
-.fav-products .products a .product .rating {
+.home .fav .fav-products a .product .card p {
+  color: #fff;
+  font-weight: 300;
+  font-family: "Oswald";
+  text-align: center;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+.home .fav .fav-products a .product .card .quantity {
+  display: none;
+}
+.home .fav .fav-products a .product .card .rating {
+  display: none;
   margin-top: 10px;
-  display: flex;
 }
-.fav-products .products a .product .rating .star {
+.home .fav .fav-products a .product .card .rating .star {
   width: 12px;
   height: 12px;
   color: #ff9e0c;
   cursor: pointer;
 }
-.fav-products .products a .product button {
+.home .fav .fav-products a .product button {
+  font-size: 0.8rem;
+  background: #580404;
+  outline: none;
+  border: none;
+  padding: 2px 5px;
+  font-family: "Raleway";
+  color: #fff;
+  font-weight: 100;
+  transition: transform 0.6s;
+}
+.home .fav .fav-products a .product button:hover {
+  transform: scale(1.05);
+}
+.home .fav .fav-products a .product button:not(:hover) {
+  transform: scale(1);
+}
+.home .avis h2 {
+  color: #030303;
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-family: "OSWALD", serif;
+  padding-left: 25px;
+  margin-bottom: 15px;
+}
+.home .avis .img {
+  width: 100%;
+  height: 250px;
+  background: url(../img/avis/avisClient.jpg) center/cover;
+}
+
+.products-group {
+  margin-bottom: 10px;
+}
+.products-group h2 {
+  color: #a5a5a5;
+  font-size: 1.5rem;
+  font-weight: 200;
+  font-family: "Roboto Slab", serif;
+  border-bottom: 1px solid #a5a5a5;
+  width: 60%;
+  margin: auto;
+  line-height: 40px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.products-group .products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.products-group .products a {
+  text-decoration: none;
+}
+.products-group .products a .product {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  width: 180px;
+  cursor: pointer;
+}
+.products-group .products a .product button {
   display: none;
 }
-.fav-products .products a .cheapest-product {
-  position: relative;
-  border: 2px solid green;
+.products-group .products a .product .card {
+  border: 2px solid #580404;
+  margin-bottom: 5px;
+  background: #030303;
 }
-.fav-products .products a .cheapest-product:before {
-  content: "Le moins cher";
-  position: absolute;
-  top: 5px;
-  right: 15px;
-  font-size: 0.5rem;
-  color: green;
-  font-weight: 700;
+.products-group .products a .product .card .title, .products-group .products a .product .card .price, .products-group .products a .product .card .desc, .products-group .products a .product .card .quantity {
+  display: none;
+}
+.products-group .products a .product .card .title-bis {
+  color: #fff;
+  font-weight: 100;
+  font-family: "Playfair Display";
+  margin-bottom: -3px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-left: 10px;
+}
+.products-group .products a .product .card .title-bis::after {
+  content: "";
+  display: block;
+  width: 110%;
+  height: 1px;
+  background: #faf7f7;
+  margin-top: -3px;
+}
+.products-group .products a .product .card .price-bis {
+  text-align: right;
+  font-family: "Oswald";
+  color: #f1efef;
+  font-weight: 200;
+  margin: -8px 10px 5px 0;
+}
+.products-group .products a .product .card .rating {
+  margin-top: 0;
+  margin-left: 10px;
+  margin-top: -6px;
+}
+.products-group .products a .product .card .rating .star {
+  height: 8px;
+  width: 8px;
+  color: #fcf2f2;
+}
+.products-group .products a .product .card img {
+  width: 100%;
 }
 
 .register {
