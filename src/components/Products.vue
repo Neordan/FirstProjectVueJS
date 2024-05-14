@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section>
+    <section class="products-group">
       <h2>{{ products.length }} produits en vente</h2>
       <section class="products">
         <router-link v-for="product in products" :key="product.id" :to="{ name: 'productDetails', params: { id: product.id }}">

@@ -6,12 +6,14 @@
         <div v-if="showConfirmation" class="confirmation">Produit ajouté au panier!</div>
       </transition>
       <img :src="product.image" alt="Product Image">
-      <h3>{{ product.name }}</h3>
+      <h3 class="title">{{ product.name }}</h3>
       <p class="desc" v-html="product.description"></p>
-      <p class="price">Prix: {{ product.unit_price }} €</p>
+      <p class="price">{{ product.unit_price }} €</p>
       <p class="quantity">Quantité disponible: {{ product.quantity }}</p>
     </div>
+    <h3 class="title-bis">{{ product.name }}</h3>
     <Rating :value="product.rating" />
+    <p class="price-bis">{{ product.unit_price }} €</p>
   </section>
     <button @click="addToCart(product)">Ajouter au panier</button>
   </div>
@@ -54,6 +56,7 @@ export default {
       const existingItem = this.cart.find(item => item.id === product.id);
       if (existingItem) {
         existingItem.quantity++;
+        
       } else {
         this.cart.push({ ...product, quantity: 1 });
       }
