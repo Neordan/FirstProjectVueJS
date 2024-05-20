@@ -1,6 +1,5 @@
 <template>
   <div class="product-info">
-
     <Product :product="product" :productClass="productClass"/>
 
     <div class="similar-group" v-if="similarProducts.length > 0">
@@ -25,7 +24,7 @@ export default {
   data() {
     return {
       product: {}, 
-      similarProducts: {},
+      similarProducts: [],
       productClass: 'product',
     };
   },

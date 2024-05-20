@@ -1,5 +1,5 @@
 [
-    { "id": 1, "firstname": "Paul", "pseudo": 10, "email": "paul@gmail.com", "password": "456"},
-    { "id": 2, "firstname": "Emma", "pseudo": 15, "email": "emma@gmail.com", "password": "123" }
+    { "id": 1, "image": "../src/assets/img/man.jpg", "firstname": "Paul", "pseudo": 10, "email": "paul@gmail.com", "password": "456"},
+    { "id": 2, "image": "../src/assets/img/woman.jpg", "firstname": "Emma", "pseudo": 15, "email": "emma@gmail.com", "password": "123" }
   ]
   

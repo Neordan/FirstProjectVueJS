@@ -3,33 +3,43 @@
     <section class="products-group">
       <h2>{{ products.length }} produits en vente</h2>
       <section class="products">
-        <router-link v-for="product in products" :key="product.id" :to="{ name: 'productDetails', params: { id: product.id }}">
-          <Product :product="product" :cheapest-price="cheapestProducts" :product-class="productClass" />
+        <router-link
+          v-for="product in products"
+          :key="product.id"
+          :to="{ name: 'productDetails', params: { id: product.id } }"
+        >
+          <Product
+            :product="product"
+            :cheapest-price="cheapestProduct.unit_price"
+            :product-class="productClass"
+          />
         </router-link>
       </section>
     </section>
-    <Cart :cart="cart" />
   </div>
 </template>
 
 <script>
+import { useProductStore } from '../stores/produits';
 import Product from './Product.vue';
-import productsData from '../../data/products.json';
+import Cart from '../views/Cart.vue';
 
 export default {
   components: {
     Product,
-  },
-  data() {
-    return {
-      products: productsData,
-      productClass: 'product',
-    };
+    Cart
   },
   computed: {
-    cheapestProducts() {
-      return this.products.toSorted((a, b) => a.unit_price - b.unit_price)[0].unit_price;
+    products() {
+      return useProductStore().products;
+    },
+    cheapestProduct() {
+      return useProductStore().cheapestProduct;
+    },
+    
+    productClass() {
+      return 'product';
     }
-  },
+  }
 };
 </script>

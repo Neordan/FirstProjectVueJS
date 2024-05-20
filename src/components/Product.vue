@@ -1,31 +1,27 @@
 <template>
   <div :class="[productClass]">
-    <section class="card">
-    <div>
+    <section :class="['card', { 'cheapest-price': product.unit_price === cheapestPrice }]">
+      <div>
+        <img :src="product.image_bis" :class="imageClass" alt="Product Image">
+        <h3 class="title">{{ product.name }}</h3>
+        <p class="desc" v-html="product.description"></p>
+        <p class="price">{{ product.unit_price }} €</p>
+        <p class="quantity">Quantité disponible: {{ product.quantity }}</p>
+      </div>
+    </section>
+    <button @click="addToCart(product)">Ajouter au panier
       <transition name="fade">
-        <div v-if="showConfirmation" class="confirmation">Produit ajouté au panier!</div>
-      </transition>
-      <img :src="product.image" alt="Product Image">
-      <h3 class="title">{{ product.name }}</h3>
-      <p class="desc" v-html="product.description"></p>
-      <p class="price">{{ product.unit_price }} €</p>
-      <p class="quantity">Quantité disponible: {{ product.quantity }}</p>
-    </div>
-    <h3 class="title-bis">{{ product.name }}</h3>
-    <Rating :value="product.rating" />
-    <p class="price-bis">{{ product.unit_price }} €</p>
-  </section>
-    <button @click="addToCart(product)">Ajouter au panier</button>
+      <div v-if="showConfirmation" class="confirmation">Produit ajouté au panier!</div>
+    </transition></button>
+   
   </div>
 </template>
 
 <script>
-import Rating from './Rating.vue';
+import { useProductStore } from '../stores/produits';
+import { useRoute } from 'vue-router';
 
 export default {
-  components: {
-    Rating
-  },
   props: {
     product: {
       type: Object,
@@ -37,37 +33,28 @@ export default {
     },
     productClass: {
       type: String
-    },
+    }
   },
   data() {
     return {
-      cart: [],
-      showConfirmation: false 
+      showConfirmation: false
     };
   },
-  created() {
-    const savedCart = localStorage.getItem('cart');
-    if (savedCart) {
-      this.cart = JSON.parse(savedCart);
+  computed: {
+    imageClass() {
+      const route = useRoute();
+      return route.name === 'productDetails' ? 'img-bis' : 'img-full';
     }
   },
   methods: {
     addToCart(product) {
-      const existingItem = this.cart.find(item => item.id === product.id);
-      if (existingItem) {
-        existingItem.quantity++;
-        
-      } else {
-        this.cart.push({ ...product, quantity: 1 });
-      }
-      localStorage.setItem('cart', JSON.stringify(this.cart));
-      this.showConfirmation = true; 
+      const store = useProductStore();
+      store.addToCart(product);
+      this.showConfirmation = true;
       setTimeout(() => {
-        this.showConfirmation = false; 
-      }, 10000); 
+        this.showConfirmation = false;
+      }, 10000);
     }
   }
 };
 </script>
-
-

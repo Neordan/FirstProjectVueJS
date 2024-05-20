@@ -6,12 +6,15 @@ body {
   padding-top: 30px;
   box-sizing: border-box;
   display: flex;
+  width: 100%;
+  padding: 30px 20px 0 20px;
 }
 
 #app {
   font-weight: normal;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 header {
@@ -230,13 +233,10 @@ header nav .cart-badge {
   border: 3px solid #580404;
   margin-bottom: 5px;
 }
-.home .fav .fav-products a .product .card img {
+.home .fav .fav-products a .product .card .img-full {
   width: 100%;
   height: 100%;
   border-radius: 0;
-}
-.home .fav .fav-products a .product .card .title-bis, .home .fav .fav-products a .product .card .price-bis {
-  display: none;
 }
 .home .fav .fav-products a .product .card h3 {
   color: #fff;
@@ -330,6 +330,18 @@ header nav .cart-badge {
   width: 180px;
   cursor: pointer;
 }
+.products-group .products a .product .cheapest-price {
+  position: relative;
+}
+.products-group .products a .product .cheapest-price::before {
+  content: "Le moins cher";
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-size: 0.5rem;
+  color: green;
+  font-weight: 700;
+}
 .products-group .products a .product button {
   display: none;
 }
@@ -338,10 +350,11 @@ header nav .cart-badge {
   margin-bottom: 5px;
   background: #030303;
 }
-.products-group .products a .product .card .title, .products-group .products a .product .card .price, .products-group .products a .product .card .desc, .products-group .products a .product .card .quantity {
+.products-group .products a .product .card .desc,
+.products-group .products a .product .card .quantity {
   display: none;
 }
-.products-group .products a .product .card .title-bis {
+.products-group .products a .product .card .title {
   color: #fff;
   font-weight: 100;
   font-family: "Playfair Display";
@@ -350,7 +363,7 @@ header nav .cart-badge {
   width: fit-content;
   padding-left: 10px;
 }
-.products-group .products a .product .card .title-bis::after {
+.products-group .products a .product .card .title::after {
   content: "";
   display: block;
   width: 110%;
@@ -358,7 +371,7 @@ header nav .cart-badge {
   background: #faf7f7;
   margin-top: -3px;
 }
-.products-group .products a .product .card .price-bis {
+.products-group .products a .product .card .price {
   text-align: right;
   font-family: "Oswald";
   color: #f1efef;
@@ -565,6 +578,9 @@ header nav .cart-badge {
   cursor: pointer;
 }
 
+.similar-group {
+  width: 100%;
+}
 .similar-group h3 {
   text-align: center;
   color: #a5a5a5;
@@ -580,7 +596,7 @@ header nav .cart-badge {
 .similar-group .similar-link {
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 40px;
   align-items: center;
 }
 .similar-group .similar-link a {
@@ -764,6 +780,7 @@ header nav .cart-badge {
 
 .cart {
   font-family: "Oswald";
+  flex: 1;
 }
 .cart .cart-lines {
   display: flex;
@@ -911,8 +928,7 @@ footer {
 
 .confirmation {
   position: absolute;
-  top: 300px;
-  left: 163px;
+  width: 100%;
   font-size: 0.7rem;
   color: #686868;
 }
@@ -970,4 +986,41 @@ footer {
   width: 12px;
   height: 12px;
   color: #ff9e0c;
+}
+
+.img-bis {
+  width: 100% !important;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+
+.profile {
+  flex: 1;
+}
+.profile .img-profile {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.profile .name {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: "Oswald";
+  color: #fff;
+  margin-top: 10px;
+}
+.profile .email {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 200;
+  font-family: "Roboto Slab";
+  color: #a5a5a5;
+  margin-top: 10px;
 }/*# sourceMappingURL=main.css.map */

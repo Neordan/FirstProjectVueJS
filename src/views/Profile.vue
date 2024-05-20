@@ -3,8 +3,9 @@
         <h2>Profile</h2>
         <div class="profile-box">
             <div class="profile-info">
-                <p>Name: {{ user.firstname }}</p>
-                <p>Email: {{ user.email }}</p>
+                <img :src="user.image" class="img-profile" alt="Profile Picture">
+                <p class="name">{{ user.firstname }}</p>
+                <p class="email">Email: {{ user.email }}</p>
             </div>
         </div>
     </div>

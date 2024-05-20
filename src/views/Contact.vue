@@ -1,4 +1,4 @@
-<!-- fais moi un composant contact -->
+
 <template>
   <div class="contact">
     <h1>Contact</h1>
