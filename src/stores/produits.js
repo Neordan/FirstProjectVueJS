@@ -1,4 +1,3 @@
-// src/stores/products.js
 import { defineStore } from 'pinia';
 import productsData from '../../data/products.json';
 
